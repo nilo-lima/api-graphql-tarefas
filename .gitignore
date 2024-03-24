@@ -1,6 +1,0 @@
-node_modules
-backup
-*.txt
-.dockerignore
-Dockerfile
-.gitignore
