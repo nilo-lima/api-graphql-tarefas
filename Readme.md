@@ -3,6 +3,16 @@
 
 Esta API GraphQL permite a criação, listagem, atualização e exclusão de tarefas e usuários. Ela é construída usando Apollo Server e Express, fornecendo uma interface flexível para operações relacionadas a tarefas e usuários.
 
+## Instalando os pacotes necessários
+
+No diretório do seu projeto, execute o seguinte comando para instalar todas as dependências listadas no `package.json`:
+
+## `npm install`
+
+Após a conclusão da instalação, você pode verificar se os pacotes foram instalados corretamente executando: 
+
+## `npm list`
+
 ## Tipos Principais
 
 - **Tarefa**: Representa uma tarefa com um título, descrição, estado de conclusão, e um usuário associado.
@@ -110,4 +120,31 @@ Para excluir uma tarefa do sistema pelo seu ID:
 }
 ```
 
-Esta documentação serve como um guia prático para desenvolvedores interagirem com a API.
+
+## Executando a API em Docker
+
+Este guia passo a passo mostrará como você pode facilmente dockerizar sua API GraphQL e executá-la em um container Docker, utilizando o Docker CLI. Esse processo facilita a implantação e o gerenciamento da sua API em qualquer ambiente que suporte Docker.
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter o Docker instalado e rodando em sua máquina. Você pode baixar e instalar o Docker a partir do [site oficial do Docker](https://www.docker.com/products/docker-desktop).
+
+## Passos para Dockerizar a API
+
+Os seguintes comandos Docker são usados para construir uma imagem Docker para sua API GraphQL e em seguida executá-la como um container. Aqui está o que cada comando faz:
+
+## `docker build -t api-graphql .`
+
+Este comando é utilizado para construir uma nova imagem Docker a partir de um `Dockerfile` localizado no diretório atual (`.` indica o diretório atual).
+
+- `docker build` é o comando para iniciar o processo de construção da imagem.
+- `-t api-graphql` especifica o nome (e opcionalmente uma tag em formato `nome:tag`) da imagem a ser construída. Neste caso, `api-graphql` é o nome dado à imagem. Se nenhuma tag for especificada, a tag padrão `latest` é utilizada.
+- O `.` no final do comando indica o contexto de construção, que é o diretório atual. O Docker usará este diretório (que deve conter o `Dockerfile`) como o contexto para a construção da imagem. Isso significa que o Docker pode acessar arquivos e pastas neste diretório para usar na construção da imagem.
+
+## `docker run -p 4000:4000 api-graphql`
+
+Este comando é usado para executar um container a partir da imagem Docker construída anteriormente (`api-graphql`).
+
+- `docker run` inicia um novo container a partir de uma imagem especificada.
+- `-p 4000:4000` é uma opção que mapeia a porta 4000 do container para a porta 4000 do host. Isso é crucial para serviços web, pois permite que você acesse o serviço rodando dentro do container a partir do `localhost:4000` no seu navegador ou cliente de API. O formato do mapeamento de portas é `PORTA_HOST:PORTA_CONTAINER`.
+- `api-graphql` é o nome da imagem Docker a partir da qual o container será iniciado. Isso diz ao Docker qual imagem usar para criar o container. Neste caso, é a imagem que foi construída com o comando `docker build` anterior.
