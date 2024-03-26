@@ -19,7 +19,7 @@ Para iniciar o servidor, execute:
 
 ## `node server.js`
 
-A API estará disponível em [http://localhost:3000](http://localhost:3000).
+A API estará disponível em [http://localhost:4000](http://localhost:4000).
 
 ## Tipos Principais
 
