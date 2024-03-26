@@ -13,6 +13,14 @@ Após a conclusão da instalação, você pode verificar se os pacotes foram ins
 
 ## `npm list`
 
+## Executando o Projeto
+
+Para iniciar o servidor, execute:
+
+## `node server.js`
+
+A API estará disponível em [http://localhost:3000](http://localhost:3000).
+
 ## Tipos Principais
 
 - **Tarefa**: Representa uma tarefa com um título, descrição, estado de conclusão, e um usuário associado.
